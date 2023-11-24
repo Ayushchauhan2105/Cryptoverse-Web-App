@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/https//Ayushchauhan2105.github.io/minorrr/static/css/main.fb7e3196.css",
-    "main.js": "/https//Ayushchauhan2105.github.io/minorrr/static/js/main.c05a4fee.js",
-    "static/media/cryptocurrency.png": "/https//Ayushchauhan2105.github.io/minorrr/static/media/cryptocurrency.1548aced3f0605895bac.png",
-    "index.html": "/https//Ayushchauhan2105.github.io/minorrr/index.html",
-    "main.fb7e3196.css.map": "/https//Ayushchauhan2105.github.io/minorrr/static/css/main.fb7e3196.css.map",
-    "main.c05a4fee.js.map": "/https//Ayushchauhan2105.github.io/minorrr/static/js/main.c05a4fee.js.map"
+    "main.css": "/minorrr/static/css/main.fb7e3196.css",
+    "main.js": "/minorrr/static/js/main.d6f2d677.js",
+    "static/media/cryptocurrency.png": "/minorrr/static/media/cryptocurrency.1548aced3f0605895bac.png",
+    "index.html": "/minorrr/index.html",
+    "main.fb7e3196.css.map": "/minorrr/static/css/main.fb7e3196.css.map",
+    "main.d6f2d677.js.map": "/minorrr/static/js/main.d6f2d677.js.map"
   },
   "entrypoints": [
     "static/css/main.fb7e3196.css",
-    "static/js/main.c05a4fee.js"
+    "static/js/main.d6f2d677.js"
   ]
 }
