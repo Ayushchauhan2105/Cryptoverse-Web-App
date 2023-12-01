@@ -95,6 +95,7 @@
 
 import React from 'react';
 import { Route, Link, Routes } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Layout, Typography, Space, Button } from 'antd';
 import {
   Navbar,
@@ -109,43 +110,48 @@ import {
   CoinsTable,
   CoinPage,
 } from './components';
-import { UserAuthContextProvider } from './context/UserAuthContext';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import annyang from 'annyang';
 import './App.css';
+import { UserAuthContextProvider } from './context/UserAuthContext';
+import { useEffect } from 'react';
 
 const App = () => {
   const { transcript, resetTranscript, browserSupportsSpeechRecognition } = useSpeechRecognition();
-
+  const navigate = useNavigate();
   const handleVoiceNavigation = (command) => {
     switch (command.toLowerCase()) {
       case 'home':
-        navigateTo('/home');
+        navigate('/home');
         break;
       case 'cryptocurrencies':
-        navigateTo('/cryptocurrencies');
+        navigate('/coinstable');
         break;
       case 'news':
-        navigateTo('/news');
+        navigate('/news');
         break;
+      
       default:
         console.log('Command not recognized:', command);
     }
   };
 
-  const navigateTo = (route) => {
-    window.location.href = route;
-  };
-
   const handleStartListening = () => {
     resetTranscript();
     if (annyang) {
-      annyang.start();
+      annyang.start({ autoRestart: true, continuous: false });
       annyang.addCommands({ '*command': handleVoiceNavigation });
     } else {
       console.error('Annyang is not available.');
     }
   };
+
+  useEffect(() => {
+    if (!browserSupportsSpeechRecognition) {
+      console.error('Speech recognition is not supported in this browser.');
+    }
+  }, [browserSupportsSpeechRecognition]);
+ 
 
   return (
     <div className='app'>
