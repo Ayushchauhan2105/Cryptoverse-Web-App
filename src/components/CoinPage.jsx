@@ -7,7 +7,6 @@ import {
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-//import ReactHtmlParser from "react-html-parser";
 import CoinInfo from "./CoinInfo";
 import { SingleCoin } from "./config/api";
 import { numberWithCommas } from "./CoinsTable";
@@ -198,7 +197,7 @@ const CoinPage = () => {
                   .toString()
                   .slice(0, -6)
               )}
-              M
+              
             </Typography>
           </span>
           {user && (

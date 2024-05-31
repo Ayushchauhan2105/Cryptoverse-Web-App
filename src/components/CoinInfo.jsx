@@ -13,31 +13,12 @@ import { chartDays } from "./config/data";
 import "./coininfo.css"
 import Chart from 'chart.js/auto';
 
-
 const CoinInfo = ({ coin }) => {
   const [historicData, setHistoricData] = useState();
   const [days, setDays] = useState(1);
   const [flag,setflag] = useState(false);
 
-//   const useStyles = styled((theme) => ({
-//     container: {
-//       width: "75%",
-//       display: "flex",
-//       flexDirection: "column",
-//       alignItems: "center",
-//       justifyContent: "center",
-//       marginTop: 25,
-//       padding: 40,
-//       [theme.breakpoints.down("md")]: {
-//         width: "100%",
-//         marginTop: 0,
-//         padding: 20,
-//         paddingTop: 0,
-//       },
-//     },
-//   }));
 
-//   const classes = useStyles();
 
   const fetchHistoricData = async () => {
     const { data } = await axios.get(HistoricalChart(coin.id, days, "usd"));
@@ -49,7 +30,7 @@ const CoinInfo = ({ coin }) => {
 
   useEffect(() => {
     fetchHistoricData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  
   }, [days]);
 
   const darkTheme = createTheme({
